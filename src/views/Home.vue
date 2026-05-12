@@ -38,7 +38,7 @@ async function search() {
 <template>
   <h1 class="text-h4 mb-6">
     <v-icon icon="mdi-magnify" class="me-2"></v-icon>
-    Cerca una canzone
+    Cerca il testo di una canzone
   </h1>
 
   <v-row class="mb-6">
