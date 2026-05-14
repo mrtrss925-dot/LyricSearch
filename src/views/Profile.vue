@@ -141,7 +141,7 @@ async function salvaProfilo() {
         block
         class="mt-4"
         @click="db.logout(); $router.push('/login')"
-        prepend-icon="mdi-logout"\>Logout</v-btn>
+        prepend-icon="mdi-logout">Logout</v-btn>
     </v-col>
   </v-row>
 
