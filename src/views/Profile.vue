@@ -77,7 +77,7 @@ async function salvaProfilo() {
           <v-text-field
             v-model="nomeDisplay"
             label="Nome visualizzato"
-            variant="outlined"
+            variant="outlined" 
             prepend-inner-icon="mdi-account-edit"
             class="mb-3"
             hint="Il nome mostrato nell'app"
