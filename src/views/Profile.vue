@@ -8,6 +8,7 @@ const generePreferito = ref("");
 const messages = ref([]);
 const saving = ref(false);
 const loading = ref(true);
+const numeroPreferiti = ref(0);
 
 const generi = [
   "Pop", "Rock", "Hip-Hop", "R&B", "Electronic", "Jazz", "Classical",
@@ -22,6 +23,8 @@ onMounted(async function () {
       nomeDisplay.value = userData.value.nomeDisplay || "";
       generePreferito.value = userData.value.generePreferito || "";
     }
+    const preferiti = await db.getPreferiti();
+    numeroPreferiti.value = preferiti.length;
   } catch (e) {
     messages.value.push({ text: "Errore nel caricamento del profilo", color: 'error' });
   } finally {
@@ -47,7 +50,6 @@ async function salvaProfilo() {
 
 <template>
   <h1 class="text-h4 mb-6">
-    <v-icon icon="mdi-account" class="me-2"></v-icon>
     Il mio profilo
   </h1>
 
@@ -56,7 +58,7 @@ async function salvaProfilo() {
   </div>
 
   <v-row v-else>
-    <v-col cols="12" md="6">
+    <v-col cols="12" md="8">
       <v-card elevation="2" rounded="lg">
         <v-card-item>
           <template v-slot:prepend>
@@ -126,9 +128,20 @@ async function salvaProfilo() {
               :subtitle="generePreferito || 'Non impostato'"
               title="Genere preferito"
             ></v-list-item>
+            <v-list-item
+              prepend-icon="mdi-heart"
+              :subtitle="numeroPreferiti"
+              title="Canzoni preferite"
+            ></v-list-item>
           </v-list>
         </v-card-text>
       </v-card>
+      <v-btn
+        color="red"
+        block
+        class="mt-4"
+        @click="db.logout(); $router.push('/login')"
+        prepend-icon="mdi-logout"\>Logout</v-btn>
     </v-col>
   </v-row>
 
