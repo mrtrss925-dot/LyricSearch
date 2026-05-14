@@ -137,13 +137,14 @@ async function salvaProfilo() {
         </v-card-text>
       </v-card>
       <v-btn
-        color="red"
-        block
-        class="mt-4"
-        @click="db.logout(); $router.push('/login')"
-        prepend-icon="mdi-logout"\>Logout</v-btn>
+  color="red"
+  block
+  class="mt-4"
+  @click="db.logout(); $router.push('/login')"
+  prepend-icon="mdi-logout">Logout</v-btn>
     </v-col>
   </v-row>
 
   <v-snackbar-queue v-model="messages" :total-visible="3" closable></v-snackbar-queue>
 </template>
+
