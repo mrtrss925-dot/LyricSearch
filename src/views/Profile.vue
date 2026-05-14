@@ -62,7 +62,7 @@ async function salvaProfilo() {
       <v-card elevation="2" rounded="lg">
         <v-card-item>
           <template v-slot:prepend>
-            <v-avatar color="blue-darken-3" size="56">
+            <v-avatar color="indigo-darken-1" size="56">
               <v-icon icon="mdi-account" size="32" color="white"></v-icon>
             </v-avatar>
           </template>
@@ -97,7 +97,7 @@ async function salvaProfilo() {
           ></v-select>
 
           <v-btn
-            color="blue-darken-3"
+            color="indigo-darken-1"
             block
             size="large"
             :loading="saving"

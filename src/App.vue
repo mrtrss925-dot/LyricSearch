@@ -22,11 +22,11 @@ function logout() {
 
 <template>
   <v-layout>
-    <v-navigation-drawer v-if="authenticated" color="blue-darken-4" permanent v-model="drawer">
+    <v-navigation-drawer v-if="authenticated" color="indigo-darken-4" permanent v-model="drawer">
       <v-list nav>
-        <v-list-item link to="/" prepend-icon="mdi-home" title="Home" base-color="white"></v-list-item>
-        <v-list-item link to="/favourites" prepend-icon="mdi-heart" title="Preferiti" base-color="white"></v-list-item>
-        <v-list-item link to="/profile" prepend-icon="mdi-account" title="Profilo" base-color="white"></v-list-item>
+        <v-list-item link to="/" prepend-icon="mdi-home" title="Home" base-color="white" class="my-4"></v-list-item>
+        <v-list-item link to="/favourites" prepend-icon="mdi-heart" title="Preferiti" base-color="white" class="my-4"></v-list-item>
+        <v-list-item link to="/profile" prepend-icon="mdi-account" title="Profilo" base-color="white" class="my-4"></v-list-item>
       </v-list>
       <template v-slot:append>
         <v-divider color="white"></v-divider>
@@ -34,7 +34,7 @@ function logout() {
       </template>
     </v-navigation-drawer>
 
-    <v-app-bar :order="-1" color="blue-darken-3" flat>
+    <v-app-bar :order="-1" color="indigo-darken-1" flat>
       <v-app-bar-nav-icon v-if="authenticated" variant="text" color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-white">
         <v-icon icon="mdi-music-note" class="me-2"></v-icon>

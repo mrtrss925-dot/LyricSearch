@@ -41,7 +41,7 @@ async function search() {
     Cerca una canzone
   </h1>
 
-  <v-row class="mb-6">
+  <v-row class="mb-6" align ="stretch">
     <v-col cols="12" md="8">
       <v-text-field
         v-model="searchQuery"
@@ -50,34 +50,39 @@ async function search() {
         prepend-inner-icon="mdi-music-note"
         clearable
         @keyup.enter="search"
-        hide-details
+        hide-details=""
+        persistent-placeholder
       ></v-text-field>
     </v-col>
     <v-col cols="12" md="4">
       <v-btn
-        color="blue-darken-3"
+        color="indigo-darken-1"
         size="large"
         height="56"
         block
         :loading="loading"
         @click="search"
         prepend-icon="mdi-magnify"
+        flat
       >
         Cerca
       </v-btn>
     </v-col>
   </v-row>
 
+  <div style="min-height: 400px;" class="mt-4">
   <div v-if="loading" class="text-center py-10">
-    <v-progress-circular indeterminate color="blue-darken-3" size="64"></v-progress-circular>
+    <v-progress-circular indeterminate color="indigo-darken-1" size="64"></v-progress-circular>
   </div>
 
   <div v-else-if="searched && results.length === 0 && !loading" class="text-center py-10 text-medium-emphasis">
     <v-icon icon="mdi-music-off" size="64"></v-icon>
     <p class="mt-4 text-h6">Nessun risultato trovato</p>
   </div>
+  
 
   <lista-canzoni v-else :canzoni="results"></lista-canzoni>
+  </div>
 
   <v-snackbar-queue v-model="messages" :total-visible="3" closable></v-snackbar-queue>
 </template>
