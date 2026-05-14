@@ -61,5 +61,5 @@ async function login() {
       </v-form>
     </v-sheet>
   </v-container>
-  <v-snackbar-queue v-model="messages" :total-visible="5" closable></v-snackbar-queue>
+  <v-snackbar-queue v-model="messages" :total-visible="5" closable close-text="Chiudi"></v-snackbar-queue>
 </template>

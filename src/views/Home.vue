@@ -84,5 +84,5 @@ async function search() {
   <lista-canzoni v-else :canzoni="results"></lista-canzoni>
   </div>
 
-  <v-snackbar-queue v-model="messages" :total-visible="3" closable></v-snackbar-queue>
+  <v-snackbar-queue v-model="messages" :total-visible="3" closable close-text="Chiudi"></v-snackbar-queue>
 </template>

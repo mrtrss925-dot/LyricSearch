@@ -145,6 +145,6 @@ async function salvaProfilo() {
     </v-col>
   </v-row>
 
-  <v-snackbar-queue v-model="messages" :total-visible="3" closable></v-snackbar-queue>
+  <v-snackbar-queue v-model="messages" :total-visible="3" closable close-text="Chiudi"></v-snackbar-queue>
 </template>
 
