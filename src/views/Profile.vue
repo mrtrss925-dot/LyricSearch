@@ -66,6 +66,7 @@ async function salvaProfilo() {
           </template>
           <v-card-title>{{ nomeDisplay || userData?.username }}</v-card-title>
           <v-card-subtitle>@{{ userData?.username }}</v-card-subtitle>
+          
         </v-card-item>
 
         <v-divider></v-divider>
