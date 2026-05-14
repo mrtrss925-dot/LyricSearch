@@ -80,8 +80,6 @@ async function salvaProfilo() {
             variant="outlined"
             prepend-inner-icon="mdi-account-edit"
             class="mb-3"
-            hint="Il nome mostrato nell'app"
-            persistent-hint
           ></v-text-field>
 
           <!-- Interazione 2: v-model su genere preferito (select) -->
@@ -103,7 +101,7 @@ async function salvaProfilo() {
             @click="salvaProfilo"
             prepend-icon="mdi-content-save"
           >
-            Salva modifiche
+            Salva
           </v-btn>
         </v-card-text>
       </v-card>
