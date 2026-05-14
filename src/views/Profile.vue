@@ -58,7 +58,7 @@ async function salvaProfilo() {
   </div>
 
   <v-row v-else>
-    <v-col cols="12" md="8">
+    <v-col cols="12" md="12" lg="8" >
       <v-card elevation="2" rounded="lg">
         <v-card-item>
           <template v-slot:prepend>
@@ -110,7 +110,7 @@ async function salvaProfilo() {
       </v-card>
     </v-col>
 
-    <v-col cols="12" md="4">
+    <v-col cols="12" md="12" lg="4">
       <v-card elevation="2" rounded="lg">
         <v-card-item>
           <v-card-title>I tuoi dati</v-card-title>
