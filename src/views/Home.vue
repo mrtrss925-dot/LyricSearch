@@ -57,6 +57,7 @@ async function search() {
       <v-btn
         color="blue-darken-3"
         size="large"
+        height="56"
         block
         :loading="loading"
         @click="search"
