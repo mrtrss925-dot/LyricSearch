@@ -15,6 +15,8 @@ const vuetify = createVuetify({
   },
 });
 
+localStorage.removeItem('login');
+
 const app = createApp(App);
 app.use(router);
 app.use(vuetify);
