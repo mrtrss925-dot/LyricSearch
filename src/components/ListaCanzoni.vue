@@ -11,7 +11,6 @@ async function caricaPreferiti() {
     const ids = await db.getPreferiti();
     preferiti.value = new Set(ids.map(String));
   } catch (e) {
-    // silenzioso
   }
 }
 
@@ -27,7 +26,7 @@ async function togglePreferito(trackId) {
       preferiti.value.delete(id);
       messages.value.push({ text: "Rimosso dai preferiti", color: 'info' });
     }
-    // trigger reattività
+    
     preferiti.value = new Set(preferiti.value);
   } catch (e) {
     messages.value.push({ text: "Errore. Riprova.", color: 'error' });
@@ -50,6 +49,7 @@ watch(() => props.canzoni, caricaPreferiti);
       <v-card elevation="2" rounded="lg" height="100%">
         <v-img
           :src="canzone.artworkUrl100?.replace('100x100', '300x300')"
+          :alt="`copertina album ${canzone.collectionName }`"
           height="180"
           cover
           color="blue-grey-lighten-4"
@@ -83,6 +83,9 @@ watch(() => props.canzoni, caricaPreferiti);
             :color="preferiti.has(String(canzone.trackId)) ? 'red' : 'grey'"
             icon="mdi-heart"
             variant="text"
+            :aria-label="preferiti.has(String(canzone.trackId))
+            ? `Rimuovi ${canzone.trackName} dai preferiti`
+            : `Aggiungi ${canzone.trackName} ai preferiti`"
             @click="togglePreferito(canzone.trackId)"
           ></v-btn>
         </v-card-actions>

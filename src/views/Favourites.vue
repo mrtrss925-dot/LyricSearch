@@ -15,13 +15,13 @@ onMounted(async function () {
       loading.value = false;
       return;
     }
-    // iTunes lookup accetta max ~200 id
+    
     const response = await axios.get("https://itunes.apple.com/lookup", {
       params: { id: ids.join(",") }
     });
     canzoni.value = response.data.results.filter(r => r.wrapperType === "track");
   } catch (e) {
-    // silenzioso
+    
   } finally {
     loading.value = false;
   }

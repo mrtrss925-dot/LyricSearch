@@ -76,7 +76,7 @@ async function salvaProfilo() {
         <v-card-text class="pt-4">
           <p class="text-subtitle-2 mb-4 text-medium-emphasis">Modifica le tue informazioni</p>
 
-          <!-- Interazione 1: v-model su nome display -->
+          
           <v-text-field
             v-model="nomeDisplay"
             label="Nome visualizzato"
@@ -85,7 +85,7 @@ async function salvaProfilo() {
             class="mb-3"
           ></v-text-field>
 
-          <!-- Interazione 2: v-model su genere preferito (select) -->
+          
           <v-select
             v-model="generePreferito"
             :items="generi"

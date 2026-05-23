@@ -11,17 +11,17 @@ const lyricsError = ref(false);
 
 onMounted(async function () {
   try {
-    // Carico info canzone da iTunes
+    
     const response = await axios.get("https://itunes.apple.com/lookup", {
       params: { id: props.trackId }
     });
     if (response.data.results.length > 0) {
       songInfo.value = response.data.results[0];
-      // Carico il testo da lyrics.ovh
+    
       await caricaTesto(songInfo.value.artistName, songInfo.value.trackName);
     }
   } catch (e) {
-    // silenzioso
+    
   }
 });
 
@@ -54,10 +54,11 @@ function formatDuration(ms) {
     <v-btn to="/" variant="text" prepend-icon="mdi-arrow-left" class="mb-4">Torna alla ricerca</v-btn>
 
     <v-row>
-      <!-- Colonna sinistra: copertina e info -->
+    
       <v-col cols="12" md="4">
         <v-img
           :src="songInfo.artworkUrl100?.replace('100x100', '600x600')"
+          :alt="`copertina album ${songInfo.collectionName }`"
           rounded="lg"
           elevation="4"
           color="blue-grey-lighten-4"
@@ -90,20 +91,20 @@ function formatDuration(ms) {
           </v-card-actions>
         </v-card>
 
-        <!-- Anteprima audio -->
+      
         <v-card v-if="songInfo.previewUrl" class="mt-4" elevation="1" rounded="lg">
           <v-card-item>
             <v-card-title class="text-body-1">Anteprima (30s)</v-card-title>
           </v-card-item>
           <v-card-text>
-            <audio controls style="width: 100%;">
+            <audio controls style="width: 100%;" :aria-label="`Anteprima di ${songInfo.trackName}`">
               <source :src="songInfo.previewUrl" type="audio/mpeg" />
             </audio>
           </v-card-text>
         </v-card>
       </v-col>
 
-      <!-- Colonna destra: testo -->
+    
       <v-col cols="12" md="8">
         <h2 class="text-h5 mb-4">
           <v-icon icon="mdi-text" class="me-2"></v-icon>

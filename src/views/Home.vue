@@ -60,7 +60,6 @@ async function search() {
         size="large"
         height="56"
         block
-        :loading="loading"
         @click="search"
         prepend-icon="mdi-magnify"
         flat
