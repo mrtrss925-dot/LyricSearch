@@ -22,6 +22,8 @@ onMounted(async function () {
     }
   } catch (e) {
     
+  } finally {
+    if (!songInfo.value) lyricsError.value = true;
   }
 });
 
@@ -128,6 +130,10 @@ function formatDuration(ms) {
       </v-col>
     </v-row>
   </div>
+
+  <v-alert v-else-if="lyricsError" type="error" variant="tonal" class="ma-6" icon="mdi-alert-circle">
+  Impossibile caricare i dati della canzone. Controlla la connessione e riprova.
+  </v-alert>
 
   <div v-else class="text-center py-10">
     <v-progress-circular indeterminate color="blue-darken-3" size="64"></v-progress-circular>

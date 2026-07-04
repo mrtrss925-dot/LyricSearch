@@ -8,7 +8,7 @@ import Favourites from "@/views/Favourites.vue";
 import Profile from "@/views/Profile.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL), 
   routes: [
     { path: "/", component: Home, name: "Home" },
     { path: "/song/:trackId", component: Song, props: true, name: "Song" },

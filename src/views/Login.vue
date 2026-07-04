@@ -28,7 +28,7 @@ async function login() {
 </script>
 
 <template>
-  <v-container class="d-flex align-center justify-center" style="min-height: 80vh;">
+  <v-container class="d-flex align-center justify-center" style="min-height: 80vh;"> 
     <v-sheet class="mx-auto py-8 px-10" width="450" elevation="4" rounded="lg">
       <div class="text-center mb-6">
         <v-icon icon="mdi-music-note" size="48" color="indigo-darken-1"></v-icon>

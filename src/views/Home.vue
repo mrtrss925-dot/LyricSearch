@@ -51,7 +51,6 @@ async function search() {
         clearable
         @keyup.enter="search"
         hide-details=""
-        persistent-placeholder
       ></v-text-field>
     </v-col>
     <v-col cols="12" md="4">

@@ -112,7 +112,7 @@ async function salvaProfilo() {
 
     <v-col cols="12" md="12" lg="4">
       <v-card elevation="2" rounded="lg">
-        <v-card-item>
+        <v-card-item> 
           <v-card-title>I tuoi dati</v-card-title>
         </v-card-item>
         <v-card-text>

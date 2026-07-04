@@ -35,7 +35,7 @@ function logout() {
     </v-navigation-drawer>
 
     <v-app-bar :order="-1" color="indigo-darken-1" flat>
-      <v-app-bar-nav-icon v-if="authenticated" variant="text" color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="authenticated" variant="text" color="white" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-white">
         <v-icon icon="mdi-music-note" class="me-2"></v-icon>
         Music Finder
